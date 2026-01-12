@@ -211,7 +211,7 @@ export default function Navbar() {
               className="flex items-center space-x-2 text-gray-600 hover:text-rose-600 transition-colors"
             >
               <PhoneIcon />
-              <span className="text-sm">+62 812-3456-7890</span>
+              <span className="text-sm">+62 896-1725-7030</span>
             </a>
           </div>
         </div>

@@ -4,115 +4,90 @@ import { useState } from "react";
 import { products } from "@/data/products";
 import ProductCard from "./ProductCard";
 
+// SVG Icons - Modern Filled Style
+const AllProductsIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z" />
+  </svg>
+);
+
+const GamisIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2L7 7v15h10V7l-5-5zm0 2.83L14 7v13h-4V7l2-2.17z" />
+    <path d="M9 10h6v2H9v-2zm0 4h6v2H9v-2z" />
+  </svg>
+);
+
+const HijabIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 4c-4.41 0-8 3.59-8 8 0 1.82.62 3.49 1.64 4.83 1.43-1.74 4.9-2.33 6.36-2.33s4.93.59 6.36 2.33A7.95 7.95 0 0020 12c0-4.41-3.59-8-8-8zm0 2c1.94 0 3.5 1.56 3.5 3.5S13.94 13 12 13s-3.5-1.56-3.5-3.5S10.06 6 12 6zm0 12c-2.03 0-4.43.82-6.14 2.88A7.95 7.95 0 0012 22a7.95 7.95 0 006.14-2.12C16.43 17.82 14.03 17 12 17z" />
+  </svg>
+);
+
+const TunikIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 3H8L4 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V7l-4-4zm2 14H6V7.83L7.83 6h8.34L18 7.83V17z" />
+    <path d="M8 10h8v2H8v-2zm0 4h8v2H8v-2z" />
+  </svg>
+);
+
+const DressIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2L4 8v12h16V8l-8-6zm6 16H6V9.27l6-4.5 6 4.5V18z" />
+    <path d="M8 12h8v2H8v-2zm0 4h8v2H8v-2z" />
+  </svg>
+);
+
+const SortIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z" />
+  </svg>
+);
+
+const SparkleIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2l2.4 7.4L22 12l-7.6 2.6L12 22l-2.4-7.4L2 12l7.6-2.6L12 2z" />
+    <path
+      d="M5 2l1.5 4.5L11 8l-4.5 1.5L5 14l-1.5-4.5L-1 8l4.5-1.5L5 2z"
+      opacity="0.5"
+    />
+  </svg>
+);
+
+const GiftIcon = () => (
+  <svg className="w-16 h-16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 00-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" />
+  </svg>
+);
+
 // Filter Categories
 const categories = [
   {
     id: "all",
     name: "Semua Produk",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <line x1="3" y1="9" x2="21" y2="9" />
-        <line x1="9" y1="3" x2="9" y2="21" />
-      </svg>
-    ),
+    icon: <AllProductsIcon />,
   },
   {
     id: "gamis",
     name: "Gamis",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 2v20M4 10h16M8 6h8M6 14h12" />
-      </svg>
-    ),
+    icon: <GamisIcon />,
   },
   {
     id: "hijab",
     name: "Hijab",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 4c-4 0-7 3-7 7s3 7 7 7 7-3 7-7-3-7-7-7z" />
-        <path d="M12 2v4M8 12h8" />
-      </svg>
-    ),
+    icon: <HijabIcon />,
   },
   {
     id: "tunik",
     name: "Tunik",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 6h16v12H4z" />
-        <path d="M8 10h8M8 14h8" />
-      </svg>
-    ),
+    icon: <TunikIcon />,
   },
   {
     id: "dress",
     name: "Dress",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 2L4 8v12h16V8z" />
-        <path d="M12 2v6" />
-      </svg>
-    ),
+    icon: <DressIcon />,
   },
 ];
-
-const SortIcon = () => (
-  <svg
-    className="w-5 h-5"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12"
-    />
-  </svg>
-);
 
 export default function ProductsSection() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -133,6 +108,7 @@ export default function ProductsSection() {
         <div className="text-center space-y-6 mb-16">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 border border-rose-200 px-4 py-2 rounded-full">
+            <SparkleIcon />
             <span className="text-sm font-semibold text-rose-600">
               Koleksi Pilihan
             </span>
@@ -165,7 +141,7 @@ export default function ProductsSection() {
               }`}
             >
               <span className="flex items-center space-x-2">
-                <span className="text-lg">{category.icon}</span>
+                {category.icon}
                 <span>{category.name}</span>
               </span>
             </button>
@@ -222,6 +198,9 @@ export default function ProductsSection() {
           </div>
 
           <div className="relative text-center text-white space-y-4">
+            <div className="flex items-center justify-center mb-4">
+              <GiftIcon />
+            </div>
             <h3 className="text-2xl sm:text-3xl font-bold">
               Promo Spesial Bulan Ini!
             </h3>

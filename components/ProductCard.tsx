@@ -6,13 +6,13 @@ type Product = {
   id: number;
   name: string;
   price: string;
+  originalPrice?: string;
   image: string;
-  shopee: string;
-  tiktok: string;
+  link: string;
 };
 
 // SVG Icons (modern line art)
-const ShopeeIcon = () => (
+const ShoppingBagIcon = () => (
   <svg
     className="w-5 h-5"
     viewBox="0 0 24 24"
@@ -22,23 +22,9 @@ const ShopeeIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-    <line x1="3" y1="9" x2="21" y2="9" />
-    <line x1="9" y1="3" x2="9" y2="21" />
-  </svg>
-);
-
-const TikTokIcon = () => (
-  <svg
-    className="w-5 h-5"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <path d="M16 10a4 4 0 0 1-8 0" />
   </svg>
 );
 
@@ -107,9 +93,9 @@ export default function ProductCard({ product }: { product: Product }) {
   const {
     name = "Product Name",
     price = "Rp 0",
+    originalPrice,
     image = "/images/placeholder.jpg",
-    shopee = "#",
-    tiktok = "#",
+    link = "#",
   } = product;
 
   return (
@@ -155,38 +141,28 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="text-2xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
             {price}
           </span>
-          <span className="text-sm text-gray-400 line-through">Rp 500.000</span>
+          {originalPrice && (
+            <span className="text-sm text-gray-400 line-through">
+              {originalPrice}
+            </span>
+          )}
         </div>
 
         <div className="h-px bg-gradient-to-r from-transparent via-rose-200 to-transparent"></div>
 
-        <div className="flex gap-3">
-          <a
-            href={shopee}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/btn flex-1 relative overflow-hidden rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-3 text-center text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <span className="relative z-10 flex items-center justify-center space-x-2">
-              <ShopeeIcon />
-              <span>Shopee</span>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 group-hover/btn:translate-x-full transition-all duration-700"></div>
-          </a>
-
-          <a
-            href={tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group/btn flex-1 relative overflow-hidden rounded-xl bg-gradient-to-r from-gray-900 to-black px-4 py-3 text-center text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            <span className="relative z-10 flex items-center justify-center space-x-2">
-              <TikTokIcon />
-              <span>TikTok</span>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 group-hover/btn:translate-x-full transition-all duration-700"></div>
-          </a>
-        </div>
+        {/* Single Buy Button */}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/btn block relative overflow-hidden rounded-xl bg-gradient-to-r from-rose-600 to-pink-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+        >
+          <span className="relative z-10 flex items-center justify-center space-x-2">
+            <ShoppingBagIcon />
+            <span>Beli Disini</span>
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 group-hover/btn:translate-x-full transition-all duration-700"></div>
+        </a>
 
         {/* Quick Info - Emoji diganti SVG */}
         <div className="flex items-center justify-between text-xs text-gray-600 pt-2">
