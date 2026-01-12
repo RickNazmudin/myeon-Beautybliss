@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+//ProductCard.tsx (tambahkan category di type, opsional)
+
 type Product = {
   id: number;
   name: string;
@@ -9,6 +11,7 @@ type Product = {
   originalPrice?: string;
   image: string;
   link: string;
+  category?: string; // ← tambahkan ini agar TypeScript tidak complain
 };
 
 // SVG Icons (modern line art)

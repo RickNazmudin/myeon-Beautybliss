@@ -146,25 +146,25 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "Shopee",
-      href: "https://shopee.co.id/myeonbeautybliss",
+      href: "https://s.shopee.co.id/5L5asxO1kn",
       icon: ShopeeIcon,
       color: "hover:text-orange-400",
     },
     {
       name: "TikTok Shop",
-      href: "https://tiktok.com/@myeonbeautybliss",
+      href: "https://www.tiktok.com/@beautyblissmyeon_?lang=id-ID",
       icon: TikTokIcon,
       color: "hover:text-white",
     },
     {
       name: "Instagram",
-      href: "https://instagram.com/myeonbeautybliss",
+      href: "/",
       icon: InstagramIcon,
       color: "hover:text-pink-400",
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/6281234567890",
+      href: "https://wa.me/6289617257030",
       icon: WhatsAppIcon,
       color: "hover:text-green-400",
     },
@@ -242,13 +242,13 @@ export default function Footer() {
                 <span className="text-rose-400 mt-1">
                   <EmailIcon />
                 </span>
-                <span className="text-sm">hello@myeonbeauty.com</span>
+                <span className="text-sm">myeonbeautybliss20@gmail.com</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-rose-400 mt-1">
                   <PhoneIcon />
                 </span>
-                <span className="text-sm">+62 812-3456-7890</span>
+                <span className="text-sm">+62 896-1725-7030</span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-rose-400 mt-1">
