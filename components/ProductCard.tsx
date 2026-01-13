@@ -162,7 +162,7 @@ export default function ProductCard({ product }: { product: Product }) {
         >
           <span className="relative z-10 flex items-center justify-center space-x-2">
             <ShoppingBagIcon />
-            <span>Beli Disini</span>
+            <span>Cek Detail Produk</span>
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover/btn:opacity-20 transform -skew-x-12 group-hover/btn:translate-x-full transition-all duration-700"></div>
         </a>
