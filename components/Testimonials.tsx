@@ -5,27 +5,123 @@ import { useState } from "react";
 const testimonials = [
   {
     name: "Aisyah Rahma",
-    text: "Kualitas produknya bagus banget, jahitannya rapi dan bahannya adem!",
+    text: "Mukenanya premium banget, bahannya lembut dan adem. Packingnya rapih, recommended!",
     initial: "AR",
     color: "from-rose-400 to-pink-500",
     rating: 5,
-    product: "Gamis Aira Flowy",
+    product: "Mukena Gracella Premium",
   },
   {
     name: "Nurul Fadilah",
-    text: "Pengiriman cepat, packing aman, recommended untuk cari hijab daily!",
+    text: "Pashmina inner-nya enak banget dipake, ga licin dan nyaman seharian!",
     initial: "NF",
     color: "from-purple-400 to-pink-500",
     rating: 5,
-    product: "Hijab Instan Crinkle",
+    product: "Pashmina Inner Jersey",
   },
   {
     name: "Siti Maryam",
-    text: "Gamisnya flowy dan syar'i, cocok banget buat acara formal maupun santai.",
+    text: "Gamis kokonya cocok banget buat lebaran keluarga, kualitas oke harga terjangkau!",
     initial: "SM",
     color: "from-pink-400 to-rose-500",
     rating: 5,
-    product: "Kaftan Syari Premium",
+    product: "Gamis Koko Set Lebaran",
+  },
+  {
+    name: "Dewi Safitri",
+    text: "Hijab instan bergo-nya praktis banget, cocok buat daily yang sibuk!",
+    initial: "DS",
+    color: "from-indigo-400 to-purple-500",
+    rating: 5,
+    product: "Hijab Instan Bergo Huma",
+  },
+  {
+    name: "Ratih Kusuma",
+    text: "Pashmina viscose-nya jatuh bagus, warnanya juga cantik sesuai foto.",
+    initial: "RK",
+    color: "from-rose-500 to-pink-400",
+    rating: 5,
+    product: "Pashmina Viscose Shawl",
+  },
+  {
+    name: "Indah Permata",
+    text: "Celana kulotnya nyaman dan motifnya kekinian, cocok untuk remaja!",
+    initial: "IP",
+    color: "from-purple-500 to-indigo-400",
+    rating: 5,
+    product: "Celana Kulot Rayon Motif",
+  },
+  {
+    name: "Laila Fitri",
+    text: "Cardigannya hangat dan modelnya Korean style banget, suka!",
+    initial: "LF",
+    color: "from-pink-500 to-rose-400",
+    rating: 5,
+    product: "Cardigan Wol Rajut Korean",
+  },
+  {
+    name: "Zahra Amelia",
+    text: "Liplast cream-nya tahan lama, bibir jadi lembab dan warnanya natural!",
+    initial: "ZA",
+    color: "from-rose-400 to-orange-400",
+    rating: 5,
+    product: "Hanasui Liplast Cream",
+  },
+  {
+    name: "Fatimah Azzahra",
+    text: "Pashmina rayon-nya premium, bahannya soft dan nyaman dipake seharian.",
+    initial: "FA",
+    color: "from-purple-400 to-pink-400",
+    rating: 5,
+    product: "Hijab Pashmina Rayon",
+  },
+  {
+    name: "Rizka Handayani",
+    text: "Belinya 10 pcs sekaligus, worthed! Bahan voalnya adem dan warnanya cantik.",
+    initial: "RH",
+    color: "from-indigo-500 to-purple-400",
+    rating: 5,
+    product: "Hijab Segiempat Paris Voal",
+  },
+  {
+    name: "Hanifah Salsabila",
+    text: "French khimar-nya syar'i banget, bisa jadi cadar juga. Multifungsi!",
+    initial: "HS",
+    color: "from-pink-400 to-purple-500",
+    rating: 5,
+    product: "French Khimar Instan Syari",
+  },
+  {
+    name: "Nadia Putri",
+    text: "Bergo motifnya lucu-lucu, cocok buat daily hijab yang simpel tapi tetap stylish!",
+    initial: "NP",
+    color: "from-rose-500 to-pink-500",
+    rating: 5,
+    product: "Jilbab Instan Bergo Motif",
+  },
+  {
+    name: "Aisha Maharani",
+    text: "Khimar bergo-nya syar'i dan bahannya jersey premium, nyaman banget!",
+    initial: "AM",
+    color: "from-purple-500 to-pink-400",
+    rating: 5,
+    product: "Khimar Bergo Jaffa",
+  },
+  {
+    name: "Maya Lestari",
+    text: "Hijab voal motif printing-nya cantik, warnanya soft dan bahannya adem.",
+    initial: "ML",
+    color: "from-pink-500 to-rose-500",
+    rating: 5,
+    product: "Hijab Voal Motif Blush",
+  },
+  {
+    name: "Salsabila Putri",
+    text: "Hijab segiempat Viney-nya berkualitas, bahannya jatuh dan ga licin!",
+    initial: "SP",
+    color: "from-indigo-400 to-purple-500",
+    rating: 5,
+    product: "Koyu Hijab Segiempat Viney",
   },
 ];
 
@@ -43,11 +139,10 @@ const QuoteIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-    <path d="M7 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
   </svg>
 );
 
-const StarIcon = ({ filled = true }) => (
+const StarIcon = ({ filled = true }: { filled?: boolean }) => (
   <svg
     className="w-5 h-5"
     fill={filled ? "currentColor" : "none"}
@@ -97,7 +192,6 @@ const ChevronRightIcon = () => (
   </svg>
 );
 
-// New: Minimal line art package/box icon for product tag
 const PackageIcon = () => (
   <svg
     className="w-4 h-4"
@@ -109,11 +203,9 @@ const PackageIcon = () => (
     <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v4" />
     <path d="M21 10l-9 6-9-6" />
     <path d="M3 10v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10" />
-    <polyline points="12 22 12 16" />
   </svg>
 );
 
-// New: Minimal line art pencil/write icon for CTA
 const WriteIcon = () => (
   <svg
     className="w-5 h-5"
@@ -143,204 +235,146 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative py-20 md:py-28 bg-gradient-to-b from-white via-pink-50/20 to-white overflow-hidden"
+      className="py-12 md:py-20 bg-gradient-to-b from-white to-rose-50/30 overflow-hidden"
     >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(219, 39, 119, 0.04) 1px, transparent 0)`,
-            backgroundSize: "50px 50px",
-          }}
-        ></div>
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center space-y-6 mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-100 to-pink-100 border border-rose-200 px-4 py-2 rounded-full">
-            <span className="text-sm font-semibold text-rose-600">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-14">
+          <div className="inline-flex items-center px-3 py-1.5 bg-rose-100/60 rounded-full mb-4 text-sm">
+            <span className="font-semibold text-rose-700">
               Testimoni Pelanggan
             </span>
           </div>
-
-          <div className="space-y-4">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-              <span className="block bg-gradient-to-r from-rose-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
-                Apa Kata Mereka?
-              </span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg sm:text-xl text-gray-600 leading-relaxed">
-              Ribuan pelanggan puas telah merasakan kualitas produk kami
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+            Apa Kata Mereka?
+          </h2>
+          <p className="mt-3 text-base md:text-lg text-gray-600 max-w-xl mx-auto">
+            Ribuan pelanggan puas dengan kualitas dan pelayanan kami
+          </p>
         </div>
 
-        {/* Stats Section tetap sama */}
+        {/* Carousel */}
+        <div className="relative">
+          {/* Navigation buttons – disembunyikan di mobile kecil agar tidak ganggu */}
+          <button
+            onClick={prevSlide}
+            className="hidden sm:flex absolute left-0 md:left-[-2.5rem] top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2.5 rounded-full shadow-md hover:bg-rose-50 border border-rose-100 transition-colors"
+            aria-label="Previous"
+          >
+            <ChevronLeftIcon />
+          </button>
 
-        {/* Testimonials Carousel - Mobile */}
-        <div className="md:hidden mb-12">
-          <div className="relative">
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-rose-100">
-              <div className="absolute -top-4 -left-4 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full p-3 text-white shadow-lg">
-                <QuoteIcon />
-              </div>
+          <button
+            onClick={nextSlide}
+            className="hidden sm:flex absolute right-0 md:right-[-2.5rem] top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2.5 rounded-full shadow-md hover:bg-rose-50 border border-rose-100 transition-colors"
+            aria-label="Next"
+          >
+            <ChevronRightIcon />
+          </button>
 
-              <div className="flex space-x-1 mb-4 text-yellow-400">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <StarIcon key={i} filled={true} />
-                ))}
-              </div>
-
-              <p className="text-gray-700 text-lg italic leading-relaxed mb-6">
-                "{testimonials[currentIndex].text}"
-              </p>
-
-              <div className="inline-block bg-rose-50 px-3 py-1 rounded-full mb-6">
-                <span className="text-sm text-rose-600 font-medium flex items-center gap-1.5">
-                  <PackageIcon /> {testimonials[currentIndex].product}
-                </span>
-              </div>
-
-              <div className="flex items-center">
-                <div className="relative">
+          <div className="overflow-hidden -mx-2 sm:mx-0">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {testimonials.map((item, index) => (
+                <div
+                  key={index}
+                  className="min-w-full flex-shrink-0 px-2 sm:px-3 lg:px-4"
+                >
                   <div
-                    className={`h-14 w-14 rounded-full bg-gradient-to-br ${testimonials[currentIndex].color} flex items-center justify-center text-white font-bold text-lg ring-4 ring-rose-100 shadow-lg`}
+                    className="
+                      bg-white rounded-2xl shadow-md border border-rose-100/60 
+                      p-5 sm:p-6 md:p-7 
+                      mx-auto
+                      max-w-[340px] xs:max-w-[360px] sm:max-w-[420px] md:max-w-[480px] 
+                      flex flex-col h-full
+                      hover:shadow-lg transition-shadow duration-300
+                    "
                   >
-                    {testimonials[currentIndex].initial}
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 bg-rose-500 rounded-full p-1">
-                    <VerifiedIcon />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <p className="font-bold text-gray-900">
-                    {testimonials[currentIndex].name}
-                  </p>
-                  <p className="text-sm text-gray-500">Verified Buyer</p>
-                </div>
-              </div>
-            </div>
+                    {/* Quote & Text */}
+                    <div className="flex-grow">
+                      <div className="text-rose-400 text-3xl mb-1.5">“</div>
+                      <p
+                        className="
+                          text-gray-700 
+                          text-[15px] xs:text-base sm:text-[15.5px] md:text-base 
+                          leading-relaxed 
+                          mb-4 sm:mb-5
+                          line-clamp-5 sm:line-clamp-6 md:line-clamp-none
+                        "
+                      >
+                        {item.text}
+                      </p>
+                    </div>
 
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 text-rose-600"
-            >
-              <ChevronLeftIcon />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 text-rose-600"
-            >
-              <ChevronRightIcon />
-            </button>
+                    {/* Rating + Product */}
+                    <div className="space-y-3 mt-1 sm:mt-2">
+                      <div className="flex items-center gap-1 text-yellow-400">
+                        {[...Array(5)].map((_, i) => (
+                          <StarIcon key={i} filled={i < item.rating} />
+                        ))}
+                      </div>
+
+                      <div className="inline-flex items-center gap-1.5 bg-rose-50/80 px-3 py-1 rounded-full text-xs sm:text-sm text-rose-700">
+                        <PackageIcon />
+                        <span className="font-medium truncate max-w-[140px] xs:max-w-[180px] sm:max-w-[220px]">
+                          {item.product}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* User Info */}
+                    <div className="flex items-center mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-rose-100">
+                      <div
+                        className={`w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white font-bold text-base sm:text-lg shadow-sm`}
+                      >
+                        {item.initial}
+                      </div>
+                      <div className="ml-2.5 sm:ml-3">
+                        <p className="font-semibold text-gray-900 text-sm sm:text-base">
+                          {item.name}
+                        </p>
+                        <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
+                          Verified Buyer
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex justify-center space-x-2 mt-6">
+          {/* Dots – diperbesar sedikit agar mudah di-tap */}
+          <div className="flex justify-center gap-2.5 sm:gap-3.5 mt-6 sm:mt-8">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "w-8 bg-rose-600" : "w-2 bg-rose-200"
+                className={`h-2.5 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "w-8 sm:w-10 bg-rose-600"
+                    : "w-2.5 sm:w-3 bg-rose-200 hover:bg-rose-300"
                 }`}
+                aria-label={`Slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Testimonials Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-rose-100 hover:border-rose-200 hover:-translate-y-2"
-            >
-              <div className="absolute -top-4 -left-4 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full p-3 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <QuoteIcon />
-              </div>
-
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-100 to-pink-100 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
-
-              <div className="flex space-x-1 mb-4 text-yellow-400">
-                {[...Array(item.rating)].map((_, i) => (
-                  <StarIcon key={i} filled={true} />
-                ))}
-              </div>
-
-              <p className="text-gray-700 text-lg italic leading-relaxed mb-6 relative z-10">
-                "{item.text}"
-              </p>
-
-              <div className="inline-block bg-rose-50 px-3 py-1 rounded-full mb-6">
-                <span className="text-sm text-rose-600 font-medium flex items-center gap-1.5">
-                  <PackageIcon /> {item.product}
-                </span>
-              </div>
-
-              <div className="flex items-center relative z-10">
-                <div className="relative">
-                  <div
-                    className={`h-14 w-14 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center text-white font-bold text-lg ring-4 ring-rose-100 group-hover:ring-rose-200 transition-all duration-300 shadow-lg`}
-                  >
-                    {item.initial}
-                  </div>
-                  <div className="absolute -bottom-1 -right-1 bg-rose-500 rounded-full p-1">
-                    <VerifiedIcon />
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <p className="font-bold text-gray-900">{item.name}</p>
-                  <p className="text-sm text-gray-500">Verified Buyer</p>
-                </div>
-              </div>
-
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">Ingin berbagi pengalaman Anda?</p>
+        {/* CTA */}
+        <div className="text-center mt-10 sm:mt-12">
           <a
             href="#contact"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-rose-600 to-pink-600 text-white rounded-full font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-rose-600 to-pink-600 text-white rounded-full font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all text-sm sm:text-base"
           >
-            <WriteIcon /> {/* Ganti emoji pencil dengan SVG write */}
-            <span>Tulis Testimoni</span>
+            <WriteIcon />
+            Tulis Testimoni Kamu
           </a>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-      `}</style>
     </section>
   );
 }
