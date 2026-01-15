@@ -109,9 +109,9 @@ export default function Hero() {
 
             {/* Description */}
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Temukan koleksi gamis, hijab, dan busana muslim modern dengan
-              desain elegan dan harga terbaik. Tampil cantik dan syar'i setiap
-              hari!
+              Temukan koleksi gamis, hijab, makeup dan busana muslim modern
+              dengan desain elegan dan harga terbaik. Tampil cantik dan syar'i
+              setiap hari!
             </p>
 
             {/* Features Carousel */}
