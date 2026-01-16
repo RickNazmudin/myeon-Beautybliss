@@ -38,11 +38,19 @@ const MakeupIcon = () => (
   </svg>
 );
 
+const MukenaIcon = () => (
+  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z" />
+    <path d="M12 5v14M5 12h14" opacity="0.4" />
+  </svg>
+);
+
 // ── Kategori (hanya 5 sesuai request) ───────────────────────────────────────
 
 const categories = [
   { id: "all", name: "Semua Produk", icon: <AllIcon /> },
   { id: "hijab", name: "Hijab", icon: <HijabIcon /> },
+  { id: "mukena", name: "Mukena", icon: <MukenaIcon /> },
   { id: "tops", name: "Tops", icon: <TopsIcon /> },
   { id: "bottoms", name: "Bottoms", icon: <BottomsIcon /> },
   { id: "makeup", name: "Makeup", icon: <MakeupIcon /> },
