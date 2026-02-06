@@ -45,7 +45,7 @@ export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const features = [
-    { icon: "", text: "Koleksi Terbaru 2025" },
+    { icon: "", text: "Koleksi Terbaru 2026" },
     { icon: "", text: "Gratis Ongkir Min 200K" },
     { icon: "", text: "Kualitas Premium" },
   ];
