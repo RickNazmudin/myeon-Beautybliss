@@ -659,4 +659,22 @@ export const products = [
     link: "https://s.shopee.co.id/1gCf6KMBJh",
     category: "tops",
   },
+  {
+    id: 74,
+    name: "WARDAH C-Defense Vitamin C All Series Lengkap",
+    price: "Rp 118.750",
+    originalPrice: "Rp 150.000",
+    image: "/images/prod-74.jpg",
+    link: "https://s.shopee.co.id/4VXcVvA22V",
+    category: "makeup",
+  },
+  {
+    id: 75,
+    name: "WARDAH Crystal Secret Series Lengkap",
+    price: "Rp 102.900",
+    originalPrice: "Rp 150.000",
+    image: "/images/prod-75.jpg",
+    link: "https://s.shopee.co.id/6AfqVURbGZ",
+    category: "makeup",
+  },
 ];
